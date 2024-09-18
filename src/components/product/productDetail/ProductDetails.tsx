@@ -1,5 +1,12 @@
 import React, { useCallback, useRef } from 'react';
-import { View, Text, ScrollView, Image, TouchableOpacity } from 'react-native';
+import {
+  View,
+  Text,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+  ActivityIndicator,
+} from 'react-native';
 import {
   BottomSheetModal,
   BottomSheetModalProvider,
@@ -23,7 +30,9 @@ export const ProductDetails = ({ productId }: ProductDetailsProps) => {
   }, []);
 
   if (loading) {
-    return <Text>Chargement...</Text>;
+    return (
+      <ActivityIndicator size="large" color="#0000ff" style={styles.loader} />
+    );
   }
 
   if (error || !product) {

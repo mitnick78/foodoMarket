@@ -8,10 +8,10 @@ interface QuantitySelectorProps {
   setQuantity: (quantity: number) => void;
 }
 
-export const QuantitySelector: React.FC<QuantitySelectorProps> = ({
+export const QuantitySelector = ({
   quantity,
   setQuantity,
-}) => {
+}: QuantitySelectorProps) => {
   const decreaseQuantity = () => {
     if (quantity > 1) {
       setQuantity(quantity - 1);
